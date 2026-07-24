@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md. Nasir Ahmed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C2321;
+    --paper:#F6F3EC;
+    --paper-alt:#EFEADD;
+    --moss:#4B5D45;
+    --ochre:#C98A3B;
+    --rust:#7A3B2E;
+    --charcoal:#22221E;
+    --muted:#6B6A62;
+    --line:#D8D2C2;
+    --font-display:'Fraunces', serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  ::selection{background:var(--ochre);color:var(--paper);}
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 32px;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,243,236,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:64px;
+  }
+  .nav-mark{
+    font-family:var(--font-mono);font-size:13px;letter-spacing:0.02em;
+    color:var(--charcoal);font-weight:500;
+  }
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{
+    font-size:14px;color:var(--muted);
+    transition:color 0.15s ease;
+  }
+  .nav-links a:hover{color:var(--charcoal);}
+  .nav-toggle{display:none;background:none;border:none;font-family:var(--font-mono);font-size:13px;cursor:pointer;color:var(--charcoal);}
+
+  /* HERO */
+  .hero{padding:96px 0 88px;position:relative;}
+  .hero-eyebrow{
+    font-family:var(--font-mono);font-size:13px;color:var(--moss);
+    margin-bottom:20px;display:flex;align-items:center;gap:10px;
+  }
+  .hero-eyebrow::before{
+    content:"";width:8px;height:8px;background:var(--moss);border-radius:50%;
+    display:inline-block;
+  }
+  h1.hero-name{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(42px, 7vw, 76px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+  }
+  .hero-role{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(20px, 2.6vw, 28px);
+    color:var(--rust);
+    margin-top:12px;
+  }
+  .hero-desc{
+    margin-top:28px;
+    max-width:52ch;
+    font-size:17px;
+    color:var(--charcoal);
+  }
+  .hero-links{
+    margin-top:36px;
+    display:flex;gap:24px;flex-wrap:wrap;
+  }
+  .hero-links a{
+    font-size:14px;font-family:var(--font-mono);
+    border-bottom:1px solid var(--charcoal);
+    padding-bottom:2px;
+  }
+  .hero-links a:hover{color:var(--ochre);border-color:var(--ochre);}
+
+  /* LOG STRUCTURE — shared by work + writing */
+  .section{padding:72px 0;border-top:1px solid var(--line);}
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:44px;flex-wrap:wrap;gap:8px;
+  }
+  .section-head h2{
+    font-family:var(--font-display);font-weight:500;font-size:30px;
+  }
+  .section-head .count{
+    font-family:var(--font-mono);font-size:13px;color:var(--muted);
+  }
+
+  .entry{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:24px;
+    padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+  .entry:first-of-type{border-top:none;}
+  .entry-num{
+    font-family:var(--font-mono);font-size:13px;color:var(--ochre);
+    padding-top:4px;
+  }
+  .entry-body h3{
+    font-family:var(--font-display);font-weight:500;font-size:22px;
+    margin-bottom:6px;
+  }
+  .entry-meta{
+    font-family:var(--font-mono);font-size:12px;color:var(--muted);
+    margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap;
+  }
+  .entry-body p{color:var(--charcoal);max-width:60ch;font-size:15.5px;}
+  .entry-tags{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+  .tag{
+    font-family:var(--font-mono);font-size:11px;color:var(--moss);
+    border:1px solid var(--moss);border-radius:100px;
+    padding:3px 10px;
+  }
+  .entry-link{
+    display:inline-block;margin-top:14px;font-size:14px;font-family:var(--font-mono);
+    color:var(--rust);border-bottom:1px solid var(--rust);padding-bottom:1px;
+  }
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;}
+  .about-grid p{margin-bottom:16px;font-size:16px;max-width:56ch;}
+  .about-facts{
+    font-family:var(--font-mono);font-size:13px;color:var(--muted);
+    border-left:1px solid var(--line);padding-left:24px;
+  }
+  .about-facts div{padding:10px 0;border-bottom:1px solid var(--line);}
+  .about-facts div:last-child{border-bottom:none;}
+  .about-facts span{display:block;color:var(--charcoal);font-size:14px;margin-top:2px;}
+
+  /* CONTACT / FOOTER */
+  footer{padding:72px 0 48px;border-top:1px solid var(--line);}
+  footer h2{
+    font-family:var(--font-display);font-weight:500;
+    font-size:clamp(32px,5vw,52px);max-width:14ch;margin-bottom:24px;
+  }
+  .footer-links{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:56px;}
+  .footer-links a{
+    font-family:var(--font-mono);font-size:14px;
+    border-bottom:1px solid var(--charcoal);padding-bottom:2px;
+  }
+  .footer-links a:hover{color:var(--ochre);border-color:var(--ochre);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--font-mono);font-size:12px;color:var(--muted);
+    flex-wrap:wrap;gap:8px;
+  }
+
+  @media (max-width:720px){
+    .wrap{padding:0 20px;}
+    .nav-links{
+      position:absolute;top:64px;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      flex-direction:column;padding:16px 20px;gap:16px;display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+    .entry{grid-template-columns:1fr;}
+    .entry-num{padding-top:0;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-facts{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:20px;}
+  }
+
+  :focus-visible{outline:2px solid var(--ochre);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="nav-mark">N.A. / log</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#work">Teaching</a></li>
+      <li><a href="#writing">Notes</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Lecturer of Chemistry</div>
+    <h1 class="hero-name">Md. Nasir Ahmed</h1>
+    <p class="hero-role">Teaching chemistry, one question at a time</p>
+    <p class="hero-desc">I teach chemistry at St. Gregory High School &amp; College. I'm looking to join an institution that fosters a supportive, student-centered learning environment &mdash; where teaching goes beyond lectures to inspire curiosity and critical thinking.</p>
+    <div class="hero-links">
+      <a href="#work">My teaching &rarr;</a>
+      <a href="#writing">Read my notes &rarr;</a>
+      <a href="mailto:nasir.ahmed@example.com">Get in touch &rarr;</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Teaching</h2>
+      <span class="count">003 entries</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-num">001</div>
+      <div class="entry-body">
+        <h3>Lecturer of Chemistry</h3>
+        <div class="entry-meta"><span>St. Gregory High School &amp; College</span><span>Current</span></div>
+        <p>Teaching chemistry with a focus on building genuine curiosity, not just exam readiness &mdash; encouraging students to ask why a reaction happens, not just how to balance it.</p>
+        <div class="entry-tags"><span class="tag">chemistry</span><span class="tag">secondary &amp; higher secondary</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-num">002</div>
+      <div class="entry-body">
+        <h3>Teaching philosophy</h3>
+        <div class="entry-meta"><span>Student-centered learning</span></div>
+        <p>I believe teaching goes beyond lectures. My classes aim to give students room to question, experiment, and connect chemistry to the world they already notice around them.</p>
+        <div class="entry-tags"><span class="tag">critical thinking</span><span class="tag">inquiry-based</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-num">003</div>
+      <div class="entry-body">
+        <h3>What I'm looking for next</h3>
+        <div class="entry-meta"><span>Open to new opportunities</span></div>
+        <p>An institution that fosters a supportive, engaging environment for both students and teachers &mdash; one that offers the resources and autonomy to teach effectively.</p>
+        <div class="entry-tags"><span class="tag">student-centered</span><span class="tag">open to relocation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="writing">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Notes &amp; reflections</h2>
+      <span class="count">003 entries</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-num">004</div>
+      <div class="entry-body">
+        <h3>Making the periodic table feel less like memorization</h3>
+        <div class="entry-meta"><span>Sample post &mdash; replace with your own</span></div>
+        <p>A few classroom approaches for helping students see the patterns in the periodic table instead of just memorizing it.</p>
+        <a href="#" class="entry-link">Read &rarr;</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-num">005</div>
+      <div class="entry-body">
+        <h3>Why I bring more questions than answers into class</h3>
+        <div class="entry-meta"><span>Sample post &mdash; replace with your own</span></div>
+        <p>Notes on shifting a lesson from lecture to discussion, and what changed in how students engaged with the material.</p>
+        <a href="#" class="entry-link">Read &rarr;</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-num">006</div>
+      <div class="entry-body">
+        <h3>A simple experiment that changed how students saw reactions</h3>
+        <div class="entry-meta"><span>Sample post &mdash; replace with your own</span></div>
+        <p>Reflections on a low-cost demonstration that made an abstract concept click for a room of students.</p>
+        <a href="#" class="entry-link">Read &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head"><h2>About</h2></div>
+    <div class="about-grid">
+      <div>
+        <p>I'm Md. Nasir Ahmed, a Lecturer of Chemistry at St. Gregory High School &amp; College.</p>
+        <p>I'm aspiring to be part of an institution that fosters a supportive and engaging learning environment, where teaching goes beyond lectures to inspire curiosity and critical thinking in students.</p>
+        <p>I aim to join an institution that fosters student-centered learning and offers the necessary resources and autonomy for effective teaching.</p>
+      </div>
+      <div class="about-facts">
+        <div>Role<span>Lecturer of Chemistry</span></div>
+        <div>Currently at<span>St. Gregory High School &amp; College</span></div>
+        <div>Looking for<span>A student-centered institution</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Open to a conversation about teaching?</h2>
+    <div class="footer-links">
+      <a href="mailto:nasir.ahmed@example.com">nasir.ahmed@example.com</a>
+      <a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-bottom">
+      <span>Md. Nasir Ahmed, updated July 2026</span>
+      <span>Entry 006 of an ongoing log</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
