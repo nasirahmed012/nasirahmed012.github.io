@@ -2,7 +2,14 @@
    Md. Nasir Ahmed — Personal Site
    Palette: white ground, deep chemistry-teal, warm brass accent
    ========================================================= */
+* {
+  box-sizing: border-box;
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 :root {
   --paper: #ffffff;
   --tint: #f4f6f9;
