@@ -398,7 +398,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 }
 
 .gallery {
-  display: grid;
+  display: actual-size-img;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   width: 100%;
