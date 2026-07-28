@@ -306,11 +306,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   border-radius: 50%;
 }
 .achievement-list strong { color: var(--ink); }
-.actual-size-img {
-  max-width: 100%;   /* prevents overflow on small screens, but doesn't upscale */
-  height: auto;       /* keeps original aspect ratio */
-  display: block;
-}
+
 .org-link { margin-top: 24px; color: var(--ink-soft); }
 
 /* ---------- Skills ---------- */
@@ -387,7 +383,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   .wrap { padding: 0 20px; }
   .photo-frame { width: 100%; max-width: 280px; height: 320px; }
 }
-
+.actual-size-img {
+  max-width: 100%;   /* prevents overflow on small screens, but doesn't upscale */
+  height: auto;       /* keeps original aspect ratio */
+  display: block;
+}
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
