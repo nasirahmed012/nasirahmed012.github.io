@@ -392,31 +392,23 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   width: 100%;
 }
 
 .gallery-item {
-  min-width: 0;
-  aspect-ratio: 1 / 1;        /* pick your ratio: 1/1 square, 4/3, 16/9, etc. */
+  height: 220px;               /* every image will be exactly this tall */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;          /* fills the box, crops overflow */
-  object-position: center;    /* which part of the image stays visible */
+  height: 100%;                /* image fills the fixed height */
+  width: auto;                 /* width follows automatically — full image, no crop */
   display: block;
-}
-
-.gallery-item {
-  height: 350px;
-  max-width: 100%;             /* prevents overflow past the container */
 }
 
 html, body {
