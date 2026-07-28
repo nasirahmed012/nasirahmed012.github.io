@@ -388,7 +388,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 
 @media (max-width: 500px) {
   .wrap { padding: 0 20px; }
-  .photo-frame { width: 100%; max-width: 500px; height: 320px; }
+  .photo-frame { width: 100%; max-width: 500px; height: 400px; }
 }
 
 .gallery {
