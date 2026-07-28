@@ -399,15 +399,17 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 }
 
 .gallery-item {
-  height: 220px;               /* every image will be exactly this tall */
+  flex-grow: 1;
+  height: 220px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .gallery-item img {
-  height: 100%;                /* image fills the fixed height */
-  width: auto;                 /* width follows automatically — full image, no crop */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;   /* needed since flex-grow stretches the box wider than the image's natural ratio */
   display: block;
 }
 
