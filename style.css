@@ -414,6 +414,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   display: block;
 }
 
+.gallery-item {
+  height: 220px;
+  max-width: 100%;             /* prevents overflow past the container */
+}
+
 html, body {
   margin: 0;
   padding: 0;
