@@ -388,7 +388,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   height: auto;       /* keeps original aspect ratio */
   display: block;
 }
-
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
