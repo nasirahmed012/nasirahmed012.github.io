@@ -415,8 +415,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 }
 
 .gallery-item {
-  height: 220px;
-  max-width: auto;             /* prevents overflow past the container */
+  height: 2500px;
+  max-width: 100%;             /* prevents overflow past the container */
 }
 
 html, body {
