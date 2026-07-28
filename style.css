@@ -386,7 +386,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   .nav-toggle { display: flex; }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 600px) {
   .wrap { padding: 0 20px; }
   .photo-frame { width: 100%; max-width: 250px; height: 220px; }
 }
