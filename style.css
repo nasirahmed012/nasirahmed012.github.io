@@ -388,9 +388,16 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   height: auto;       /* keeps original aspect ratio */
   display: block;
 }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
 .gallery-img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;   /* fills the box, crops overflow evenly */
   border-radius: 8px;
 }
 /* Respect reduced motion */
