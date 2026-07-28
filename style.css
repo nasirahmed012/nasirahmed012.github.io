@@ -407,7 +407,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 
 .gallery-item img {
   height: 100%;                /* image fills the fixed height */
-  max-width: 100%;                 /* width follows automatically — full image, no crop */
+  width: 100%;                 /* width follows automatically — full image, no crop */
   display: block;
 }
 
