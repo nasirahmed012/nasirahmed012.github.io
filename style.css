@@ -413,6 +413,13 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   min-width: 0;   /* 👈 this line fixes the overflow */
   display: block;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
