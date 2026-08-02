@@ -386,7 +386,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   .nav-toggle { display: flex; }
 }
 
-@media (max-width: 150px) {
+@media (max-width: 600px) {
   .wrap { padding: 0 20px; }
   .photo-frame { width: 100%; max-width: 250px; height: 220px; }
 }
@@ -400,7 +400,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 
 .gallery-item {
   flex-grow: 1;
-  height: 500px;
+  height: 300px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
