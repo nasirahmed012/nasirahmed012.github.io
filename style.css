@@ -146,6 +146,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 /* ---------- Hero photo / image section ---------- */
 .hero-photo { position: relative; justify-self: center; }
 
+.profile-photo-wrapper {
+  background-image: none; /* remove the icon */
+}
+
 .photo-frame {
   width: 280px;
   height: 340px;
