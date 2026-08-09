@@ -146,10 +146,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 /* ---------- Hero photo / image section ---------- */
 .hero-photo { position: relative; justify-self: center; }
 
-.profile-photo-wrapper {
-  background-image: none; /* remove the icon */
-}
-
 .photo-frame {
   width: 280px;
   height: 340px;
@@ -182,17 +178,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   background: var(--tint);
 }
 
-.bond-motif {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  bottom: -50px;
-  left: -60px;
-  z-index: -1;
-  opacity: 0.9;
-}
-.bond-motif circle { fill: var(--brass); }
-.bond-motif line { stroke: var(--line); stroke-width: 2; }
 
 /* ---------- Sections ---------- */
 .section { padding: 84px 0; }
